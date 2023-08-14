@@ -1,14 +1,12 @@
 # sidescroller_tutorial in Godot 2D Engine
 
-
 ## Table of Contents
 
 - [Details](#details)
 - [Technical Skills](#technical-skills)
-- [Getting Started](#getting_started)
+- [Getting Started](#getting-started)
 - [Credit](#credit)
 - [Notes](#notes)
-
 
 ## Details
 
@@ -17,8 +15,7 @@
 Godot 2D Game Design Learning Project - This repository documents my journey as I follow a tutorial to learn about creating 2D games using the Godot game engine.
 The tutorial I'm following focuses on the essentials of game design and development using Godot 4.
 
-
-## Tehcnical Skills
+## Technical Skills
 
 I am currently following a tutorial series that provides a comprehensive introduction to 2D game design with Godot. The tutorial covers key topics that are crucial for creating engaging 2D games:
 
@@ -43,10 +40,10 @@ Creator: [Chris's Tutorials](https://www.youtube.com/@ChrisTutorialsYT)
 
 Tutorial for this video: [2D Platformer Quickstart](https://www.youtube.com/watch?v=43c-Sm5GMbc&t=2714s)
 
-
 ## License
 
 The code and assets provided in the tutorial series belong to their respective creators. The use of these materials is for learning purposes only. 
 Please refer to the original tutorial for information on licensing and usage rights.
 
 Happy learning and happy game development!
+
