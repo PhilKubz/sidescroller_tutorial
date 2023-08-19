@@ -35,8 +35,7 @@ func _physics_process(delta: float) -> void:
 			velocity.y = jump_velocity
 		elif not has_double_jumped:
 			# Double jump in air
-			velocity.y = double_jump_velocity
-			has_double_jumped = true
+			double_jump()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -69,6 +68,12 @@ func jump():
 	animated_sprite.play("jump_start")
 	animation_locked = true
 
+func double_jump():
+	velocity.y = double_jump_velocity
+	animated_sprite.play("jump_double")
+	animation_locked = true
+	has_double_jumped = true
+	
 func update_facing_direction():
 	if direction.x > 0:
 		animated_sprite.flip_h = false
@@ -80,6 +85,6 @@ func land():
 	animation_locked = true
 
 
-func _on_animated_sprite_2d_animation_finished() -> void:
-	if(animated_sprite.animation == "jump_end"):
+func _on_animated_sprite_2d_animation_finished():
+	if(["jump_end", "jump_start", "jump_double"].has(animated_sprite.animation)):
 		animation_locked = false

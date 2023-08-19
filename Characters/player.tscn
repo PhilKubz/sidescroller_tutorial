@@ -1,9 +1,10 @@
-[gd_scene load_steps=41 format=3 uid="uid://c1omsgb7kdd1k"]
+[gd_scene load_steps=44 format=3 uid="uid://c1omsgb7kdd1k"]
 
 [ext_resource type="Script" path="res://Characters/player.gd" id="1_evxj8"]
 [ext_resource type="Texture2D" uid="uid://b0yrv21emg8cm" path="res://Art/Legacy-Fantasy - High Forest 2.3/Character/Idle/Idle-Sheet.png" id="1_tyoj1"]
 [ext_resource type="Texture2D" uid="uid://b8t67ah50t18l" path="res://Art/Legacy-Fantasy - High Forest 2.3/Character/Jumlp-All/Jump-All-Sheet.png" id="3_1c00i"]
 [ext_resource type="Texture2D" uid="uid://dujg2wb5uvui3" path="res://Art/Legacy-Fantasy - High Forest 2.3/Character/Run/Run-Sheet.png" id="3_74oji"]
+[ext_resource type="Texture2D" uid="uid://d10rp8s75ilq6" path="res://Art/Legacy-Fantasy - High Forest 2.3/Character/Jump-Start/Jump-Start-Sheet.png" id="3_s45ic"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oneg6"]
 atlas = ExtResource("1_tyoj1")
@@ -20,6 +21,14 @@ region = Rect2(128, 0, 64, 80)
 [sub_resource type="AtlasTexture" id="AtlasTexture_mhy0b"]
 atlas = ExtResource("1_tyoj1")
 region = Rect2(192, 0, 64, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wbpj"]
+atlas = ExtResource("3_s45ic")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mxja"]
+atlas = ExtResource("3_s45ic")
+region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bv4rc"]
 atlas = ExtResource("3_1c00i")
@@ -162,6 +171,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_8wbpj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mxja")
+}],
+"loop": false,
+"name": &"jump_double",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_bv4rc")
 }, {
 "duration": 1.0,
@@ -276,17 +296,17 @@ radius = 8.0
 height = 44.0
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(0, -2)
 script = ExtResource("1_evxj8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-32, -40)
 sprite_frames = SubResource("SpriteFrames_dqsoc")
-animation = &"jump_end"
+animation = &"idle"
 autoplay = "idle"
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(25, 32)
+position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_c5i8v")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
